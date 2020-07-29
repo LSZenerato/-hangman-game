@@ -70,12 +70,14 @@ const Form = styled.div`
 
 const ForcaItems = styled.div`
     height: 100%;
-    width: 100%;
+    width: 90%;
+    max-width: 300px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     overflow-x: auto;
+    padding: 0 10px;
     margin: 20px 0;
 
     .item {
