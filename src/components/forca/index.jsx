@@ -15,10 +15,12 @@ function Forca() {
     const handleChangeLetter = (event) => settypedLetter(event.target.value);
 
     const startForca = () => {
+        setScore(0);
+        setArray([]);
         let tempArrObj = [];
         var array = typedWord.toUpperCase().split("");
 
-        array.map(item => {
+        array.forEach(item => {
             if (item === " ") {
                 tempArrObj.push({
                     letra: 'space',
@@ -30,7 +32,7 @@ function Forca() {
                     status: false
                 });
             }
-        })
+        });
 
         setArray(tempArrObj);
         setGameStarted(true);
@@ -42,7 +44,7 @@ function Forca() {
         let correctChar = false;
         let tempScore = score;
 
-        array.map((item, index) => {
+        array.forEach((item, index) => {
             if (item.letra === typedLetter.toUpperCase()) {
                 tempArray[index].status = true;
                 correctChar = true;
@@ -67,8 +69,6 @@ function Forca() {
         word = word + array.map(item => item.letra !== "," && item.letra);
 
         setGameStarted(false);
-        setScore(0);
-        setArray([]);
         alert(`Você perdeu! A palavra correta era: ${word.replaceAll(',', "")}`);
     }
 
@@ -98,7 +98,7 @@ function Forca() {
             <div className="form-div">
                 <h2>Digite a letra palpite</h2>
                 <input disabled={!gameStarted} onChange={handleChangeLetter} type="text" value={typedLetter} maxLength={1} minLength={1} />
-                <button disabled={!gameStarted} className={gameStarted && "btn-end"} onClick={() => sendForca()}>Confirmar</button>
+                <button disabled={!gameStarted} className={gameStarted ? "btn-end" : ""} onClick={() => sendForca()}>Confirmar</button>
             </div>
             <div className="form-div">
                 <h2>Digite a palavra da forca</h2>

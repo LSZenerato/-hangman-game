@@ -25,7 +25,7 @@ const Form = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 20px;
+        margin: 10px 5px;
     }
 
     h2 {
