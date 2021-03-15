@@ -17,6 +17,7 @@ const Form = styled.div`
     justify-content: center;
     background: rgb(39, 41, 43);
     border-radius: 20px;
+    flex-direction: column;
 
     .form-div {
         width: 300px;
@@ -70,11 +71,10 @@ const Form = styled.div`
 
 const ForcaItems = styled.div`
     height: 100%;
-    width: 90%;
-    max-width: 300px;
+    max-width: 90%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     overflow-x: auto;
     padding: 0 10px;
